@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>Modules example</title>
+		<script type="text/javascript" src="./jquery-1.4.4.min.js"></script>
+		
+		<script type="text/javascript" src="../../src/core.js"></script>
+		<script type="text/javascript" src="../../src/sandbox.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				Core.require([
+					'navigation.navigation',
+					'loader.loader'
+					], function(){
+						Core.register('navigationModule', NavigationModule, {'id' : 'navigationContainer'});
+						Core.register('loaderModule', LoaderModule, {'id' : 'loaderContainer'});
+					
+						Core.startAll();
+						Core.sendNotifications = true;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="navigationContainer">
+			<h1>Navigation</h1>
+			<div id="message"></div>
+			<ul id="navigation">
+				<li><a href="#!/module1">Load module 1</a></li>
+				<li><a href="#!/module2">Load module 2</a></li>
+			</ul>
+		</div>
+		<div id="loaderContainer">
+			Nothing to load...
+		</div>
+		<div id="debug"></div>
+	</body>
+</html>

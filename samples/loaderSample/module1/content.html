@@ -1,0 +1,14 @@
+<script type="text/javascript">
+	Core.require('module1.module1', function(){
+		Core.register('module1', Module1, 'module1Container');
+		Core.start('module1');
+	});
+</script>
+<div id="module1Container">	
+	<h1>Module1 content</h1>
+	<ul>
+		<li><a id="button1" href="#!/module1/button1">Button1</a></li>
+		<li><a id="button2" href="#!/module1/button2">Button2</a></li>
+		<li><a id="button3" href="#!/module1/button3">Button3</a></li>
+	</ul>
+</div>
